@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+.container {
+  /*ext-align: center;
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: crimson;*/
+  position: relative;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  background: #0a0a0a;
+  border-radius: 20px;
+  z-index: 1;
+  overflow: hidden;
+  color: white;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+}
+
+/* Liquid border effect */
+.container::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(135deg, #00f2ff, #ff00c8, #00f2ff);
+  filter: blur(30px);
+  z-index: -1;
+  animation: morphingBorder 10s infinite ease-in-out;
+  border-radius: 40%;
+}
+
+/* Morphing animation */
+@keyframes morphingBorder {
+  0% {
+    border-radius: 42% 58% 70% 30% / 42% 30% 70% 58%;
+    transform: rotate(0deg);
+  }
+  25% {
+    border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
+    transform: rotate(90deg);
+  }
+  50% {
+    border-radius: 58% 42% 30% 70% / 30% 70% 42% 58%;
+    transform: rotate(180deg);
+  }
+  75% {
+    border-radius: 40% 60% 60% 40% / 50% 50% 40% 60%;
+    transform: rotate(270deg);
+  }
+  100% {
+    border-radius: 42% 58% 70% 30% / 42% 30% 70% 58%;
+    transform: rotate(360deg);
+  }
+}
+.text-primary {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+/*button.btn {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+button.btn:hover {
+  background-color: darkblue;
+}*/
+
+.btn {
+  background: #fff;
+  border: none;
+  color: #444;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.btn::before {
+  width: 60px;
+  height: 60px;
+  top: -25px;
+  left: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn::after {
+  width: 50px;
+  height: 50px;
+  top: -20px;
+  right: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background: #f0f0f0;
+  transform: scale(1.05);
+}
+
+p {
+  font-size: 18px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.error {
+  color: rgb(0, 0, 0);
+  margin-top: 10px;
+}
+
+.Scontainer {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.shape {
+  background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+  animation: morph 8s ease-in-out infinite;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  height: 400px;
+  transition: all 1s ease-in-out;
+  width: 400px;
+  z-index: 5;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background: linear-gradient(
+      45deg,
+      var(--primary) 0%,
+      var(--secondary) 100%
+    );
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    background: linear-gradient(45deg, var(--third) 0%, var(--secondary) 100%);
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background: linear-gradient(
+      45deg,
+      var(--primary) 0%,
+      var(--secondary) 100%
+    );
+  }
+}
+
+/*Background animation*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+section .wave {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #4973ff;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+section .wave span {
+  content: "";
+  position: absolute;
+  width: 325vh;
+  height: 325vh;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: #000;
+}
+.content {
+  position: relative;
+  z-index: 1;
+  font-size: 4em;
+  letter-spacing: 2px;
+  color: #fff;
+}
+section .wave span:nth-child(1) {
+  border-radius: 45%;
+  background: rgba(20, 20, 20, 1);
+  animation: animate 5s linear infinite;
+}
+
+section .wave span:nth-child(2) {
+  border-radius: 40%;
+  background: rgba(20, 20, 20, 0.5);
+  animation: animate 10s linear infinite;
+}
+section .wave span:nth-child(3) {
+  border-radius: 42.5%;
+  background: rgba(20, 20, 20, 0.5);
+  animation: animate 15s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+.input-contain {
+  /* border-style: double;*/
+  padding-left: 60px;
+}
+
+.result-contain {
+  /* border-style: double;*/
+  padding-left: 60px;
+}
+
+/* Default text style */
+.text-primary {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Hot */
+.hot-animate {
+  animation: heatGlow 1.2s infinite alternate;
+  color: #ff4500;
+}
+@keyframes heatGlow {
+  0% {
+    text-shadow: 0 0 10px orange;
+  }
+  100% {
+    text-shadow: 0 0 20px red;
+  }
+}
+
+/* Cold */
+.cold-animate {
+  animation: frostFade 1.5s infinite alternate;
+  color: #00bfff;
+}
+@keyframes frostFade {
+  0% {
+    text-shadow: 0 0 5px #00f0ff;
+  }
+  100% {
+    text-shadow: 0 0 15px #ffffff;
+  }
+}
+
+/* Rainy */
+.rain-animate {
+  position: relative;
+  color: #4169e1;
+  animation: shimmer 2s infinite linear;
+}
+@keyframes shimmer {
+  0% {
+    text-shadow: 0 0 2px #6fa0ff;
+  }
+  50% {
+    text-shadow: 0 0 6px #8ab6ff;
+  }
+  100% {
+    text-shadow: 0 0 2px #6fa0ff;
+  }
+}
+
+/* Mild */
+.mild-animate {
+  animation: pulse 2s infinite ease-in-out;
+  color: #ffd700;
+}
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 5px #fff000;
+  }
+  50% {
+    text-shadow: 0 0 15px #ffec80;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff000;
+  }
+}
+
+.text-primary {
+  background-color: #000;
+}

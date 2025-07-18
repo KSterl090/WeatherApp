@@ -16,6 +16,9 @@ _______________
 To add your own API 
 
 Go to https://openweathermap.org/
+
 Create an account 
+
 Generate an API Key 
+
 Place your API key inside of the .env component 
